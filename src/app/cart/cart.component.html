@@ -1,0 +1,47 @@
+@let items = cartItems$ | async;
+
+<!-- If items are in the cart -->
+@if (items.length) {
+
+  <!-- Cart Header (Fixed) -->
+  <div class="cart-container">
+    <div class="cart-header">
+      <span>Items</span>
+      <span>Quantity</span>
+      <span>Total</span>
+    </div>
+    
+    <!-- Cart Items List -->
+    <div class="cart-items-scroll">
+      @for (item of items; track item.id) {
+        <div class="cart-item">
+          <!-- Delete button -->
+          <i class="fa fa-close" (click)="deleteFromCart(item)"></i>
+          
+          <!-- Product image -->
+          <img [src]="item.imageURL" [fallbackImage]="'https://t3.ftcdn.net/jpg/01/30/14/60/240_F_130146011_64algBC3Kz91zzdht7qeW2fEnUipEtwB.jpg'">
+          
+          <!-- Product name -->
+          <span class="item-name">{{ item.name }}</span>
+          
+          <!-- Quantity controls -->
+          <span class="plus-minus-input">
+            <button class="input-group-button circle" (click)="decreaseQuantity(item)">-</button>
+            <span class="item-quantity">{{ item.quantity }}</span>
+            <button class="input-group-button circle" (click)="increaseQuantity(item)">+</button>
+          </span>
+          
+          <!-- Product price -->
+           <span class="item-price">${{ calculateItemTotal(item) }}</span>
+        </div>
+      }
+    </div>
+
+    <!-- Price Summary (Fixed) -->
+    <div class="cart-subtotal">Subtotal: ${{ calculateSubtotal(items).toFixed(2) }}</div>
+    <div class="cart-total">Total: ${{ calculateTotal(items).toFixed(2) }}</div>
+  </div>
+} 
+@else {
+  <p class="cart-empty">Your cart is empty!</p>
+}

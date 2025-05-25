@@ -1,0 +1,29 @@
+.contact-page {
+  max-width: 400px;
+  margin: 2rem auto;
+  font-family: Arial, sans-serif;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-top: 0.3rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  margin-top: 1.5rem;
+  padding: 0.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+}

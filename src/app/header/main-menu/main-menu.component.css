@@ -1,0 +1,29 @@
+.ekart-menu {
+  display: flex;
+  justify-content: space-between; /* Pushes first items left and last item right */
+  align-items: center;
+  width: 100%; /* Ensure full width */
+  padding: 1vh 1vh;
+  color: #36454F;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  gap: 1rem;
+}
+
+.ekart-menu a {
+  white-space: nowrap;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.cart-link {
+  margin-left: auto; /* Will push it to the far right */
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+

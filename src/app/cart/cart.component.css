@@ -1,0 +1,168 @@
+/* Cart container styling */
+.cart-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Header row for Items, Quantity, Total */
+.cart-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 1rem;
+}
+
+/* Adjust widths for header spans to align with cart-item */
+.cart-header span:nth-child(1) {
+  flex: 2;
+}
+.cart-header span:nth-child(2),
+.cart-header span:nth-child(3) {
+  flex: 1;
+  text-align: center;
+}
+
+.cart-items-scroll {
+  max-height: 500px; /* Adjust this to show ~5 items based on item height */
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+/* Individual cart item */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Delete icon with hover effect */
+.cart-item i.fa-close {
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s ease;
+  flex-shrink: 0;
+}
+.cart-item i.fa-close:hover {
+  color: #e74c3c; /* red on hover */
+}
+
+/* Product image */
+.cart-item img {
+  width: 100px;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+/* Product name spans more space */
+.cart-item span:nth-child(4) {
+  flex: 2;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Quantity controls container */
+.plus-minus-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+}
+
+/* Buttons style - add subtle hover and focus */
+.input-group-button.circle {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  user-select: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+.input-group-button.circle:hover {
+  background-color: #f0f0f0;
+  border-color: #999;
+}
+.input-group-button.circle:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #007bff88;
+}
+
+/* Quantity and price text */
+.item-quantity,
+.item-price {
+  min-width: 2.5rem;
+  text-align: center;
+  user-select: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #222;
+  flex-shrink: 0;
+}
+
+/* Price aligned to right for clarity */
+.item-price {
+  flex: 1;
+  text-align: center;
+  font-weight: 700;
+  color: #27ae60; /* green to highlight price */
+}
+
+/* Subtotal row */
+.cart-subtotal {
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: right;
+  color: #666;
+}
+
+
+/* Total row */
+.cart-total {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: right;
+  color: #111;
+}
+
+/* Empty cart message styling */
+.cart-empty {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  padding: 2rem 0;
+  font-size: 1.2rem;
+}
+
+.item-name {
+  flex: 2;               /* controls the width relative to other flex items */
+  max-width: 250px;      /* fix the max width you want */
+  word-wrap: break-word; /* break long words if needed */
+  white-space: normal;   /* allow text to wrap */
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.3;
+}

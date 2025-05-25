@@ -1,0 +1,124 @@
+.on-sale-page {
+  background-color: #282828;
+  font-family: Arial, sans-serif;
+}
+
+.on-sale-page h2 {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  padding-top: 3rem; /* Add this */
+}
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.product-card.horizontal-layout {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 1rem;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.product-left {
+  width: 250px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.product-left img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.product-left h3 {
+  font-size: 1.2rem;
+  margin-top: 0.75rem;
+}
+
+.product-left p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.product-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.product-right .description {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.on-sale-product-detail-price span {
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+}
+
+.price-original {
+  background-color: red;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.price-discount {
+  background-color: green;
+  color: white;
+}
+
+.btn-add-to-cart {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-add-to-cart:hover {
+  background-color: #0056b3;
+}
+
+.product-image-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.product-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: gold;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}

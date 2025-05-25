@@ -1,0 +1,72 @@
+<div class="ekart--product--container">
+    <search (searchTextChanged)="setSearchText($event)"></search>
+    <!--Stores Instance of ProductListComponent Class giving us access to selectedProduct-->
+    <product-list [searchText]="searchText" #productListComponent></product-list>
+    <div>
+        @for (item of listOfString; track item) {
+          <p>Current element in array is: {{ item }}</p>
+        } @empty {
+          <p>End of Item List.</p>
+        }
+      </div>
+
+    <div class="ekart-featured-products">
+      <div class="ekart-featured-product-heading">
+        <h1>Latest Arrivals in Popular Brands</h1>
+      </div>
+      <featured-brands>
+        <h3 class="title">New Arrivals in Nike</h3>
+        <p>Discover the latest Nike collection crafted for performance and style. From cutting-edge running shoes to urban-ready apparel, gear up to move with confidence. Push forward!</p>
+        <button class="call-to-action">Show New Nike Arrivals</button>
+      </featured-brands>
+      <featured-brands>
+        <h3 class="title">New Arrivals in Adidas</h3>
+        <p>Step into comfort and versatility with Adidas’ newest arrivals. Whether you're on the pitch or on the street, explore designs made to move and built to last.</p>
+        <button class="call-to-action">Show New Adidas Arrivals</button>
+      </featured-brands>
+      <featured-brands>
+        <h3 class="title">New Arrivals in Reebok</h3>
+        <p>Power through your workouts with Reebok’s latest drops. From high-intensity training shoes to breathable activewear, find your edge and push past limits.</p>
+        <button class="call-to-action">Show New Reebok Arrivals</button>
+      </featured-brands>
+    </div>
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <img [src]="product.pImage" class="product-img">
+    <p>Name: <b>{{product.name}}</b></p>
+    <p>Price: ${{product.price}}</p>
+    <p>Colour: {{product.colour}}</p>
+    <p>Discounted Price: $ {{ getDiscountedPrice().toFixed(2) }}</p>
+    <p>
+        {{ product.inStock > 0 
+            ? 'Only ' + product.inStock + ' items left' 
+            : 'Not in Stock' 
+        }}
+    </p>
+    <button (click)="decrementCartValue()">-</button>
+    <span>{{ addToCart }}</span>
+    <button (click)="incrementCartValue()">+</button>
+    <!--Disabled, Hidden, Checked require Property Binding Syntax-->
+    <!-- <input (input)="onNameChange($event)"><br> -->
+    <!--Property binding with [value] and event binding with the (input)-->
+    <!--<p>name={{name}}</p>-->
+</div>

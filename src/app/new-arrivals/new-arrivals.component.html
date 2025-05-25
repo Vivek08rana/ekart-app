@@ -1,0 +1,48 @@
+<div class="new-arrivals-page">
+  <h2>New Arrivals</h2>
+  <div class="product-list">
+    @for (product of newestProducts; track $index) {
+      <div class="product-card horizontal-layout">
+        <div class="product-left">
+          <img [src]="product.imageURL" [fallbackImage]="'https://t3.ftcdn.net/jpg/01/30/14/60/240_F_130146011_64algBC3Kz91zzdht7qeW2fEnUipEtwB.jpg'"/>
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.brand }} — {{ product.category }}</p>
+        </div>
+        <div class="product-right">
+          <p class="description">{{ product.description }}</p>
+
+          <div class="new--arrival-product-detail-price">
+            <p>
+              <b>Price Each Pair: </b>
+              @if (product.discountPrice) {
+                <span class="price-original">
+                  <s>${{product.price}}</s>
+                </span>
+                <span class="price-discount">
+                  ${{product.discountPrice}}
+                </span>
+                (Inclusive of all taxes)
+              }
+              @else {
+                <span class="price-discount">
+                  ${{product.price}}
+                </span>
+                (Inclusive of all taxes)
+              }
+            </p>
+          </div>
+
+          <div class="new--arrival-product-detail-addtoCart">
+            @if (product.is_in_inventory) {
+              <button class="btn-add-to-cart" appHover (click)="addToCart(product)">ADD TO CART</button>
+            }
+            @else {
+              <button class="btn-add-to-cart" appHover>NOTIFY ME</button>
+            }
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+

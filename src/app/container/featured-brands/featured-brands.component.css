@@ -1,0 +1,20 @@
+.ekart-featured-product-item {
+    background-color: #3a3a3a;
+    flex: 1 1 30%;
+    padding: 20px 30px;
+    border-radius: 8px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.title, .description, .call-to-action {
+  margin: 10px 0;
+}
+
+.title {
+  font-size: 18px; /* or 20px if you want a bit bigger */
+  margin-bottom: 10px;
+  font-weight: 600; /* Optional: keeps it bold but clean */
+  font-weight: bold;
+}
+

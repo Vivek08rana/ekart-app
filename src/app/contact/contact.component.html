@@ -1,0 +1,18 @@
+<div class="contact-page">
+  <h1>Contact Us</h1>
+  <p>If you have any questions, feel free to reach out!</p>
+
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="contact-form">
+    <label for="name">Name:</label>
+    <input id="name" name="name" ngModel required />
+
+    <label for="email">Email:</label>
+    <input id="email" name="email" ngModel required email />
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" ngModel required></textarea>
+
+    <button type="submit" [disabled]="!contactForm.form.valid">Send</button>
+  </form>
+</div>
+

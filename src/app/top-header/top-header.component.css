@@ -1,0 +1,9 @@
+.ekart--topheader {
+    background-color: black;          /* Black background */
+    color: white;                     /* White text */
+    text-align: center;               /* Center the text */
+    font-size: 18px;                  /* Medium size text */
+    font-weight: bold;                /* Bold text */
+    height: 30px;                     /* Fixed height for the bar */
+    padding: 0;                       /* No extra padding, just height controls the space */
+  }

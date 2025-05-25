@@ -1,0 +1,70 @@
+<div class="ekart--product--details--info scroll">
+        <div class="ekart-product-detail-close" (click)="CloseView()">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <div class="ekart-product-detail-image">
+            <img [src]="product.imageURL" class="ekart-product-detail-image" [fallbackImage]="'https://t3.ftcdn.net/jpg/01/30/14/60/240_F_130146011_64algBC3Kz91zzdht7qeW2fEnUipEtwB.jpg'">
+        </div>
+        
+        <div class="ekart-product-detail">
+            <div class="ekart-product-detail-name">
+                <h2> {{ product.name }}</h2>
+            </div>
+            <div class="ekart-product-detail-gbc">
+                <span [setBackground]="{backColor: 'yellow', textColor: 'white'}">{{ product.gender }}</span>
+                <span [setBackground]="{backColor: 'red', textColor: 'white'}">{{ product.brand }}</span>
+                <span [setBackground]="{backColor: 'green', textColor: 'white'}">{{ product.category }}</span>
+            </div>
+            <div class="ekart-product-detail-price">
+                <p>
+                    <b>Price Each Pair:</b>
+                    @if (product.discountPrice) {
+                        <span style="background-color: red; color:white"><s>${{product.price}}</s></span>
+                        <span style="background-color: green; color:white">${{product.discountPrice}}</span> (Inclusive of all taxes)
+                    }
+                    @else {
+                        <span style="background-color: green; color:white">${{product.price}}</span> (Inclusive of all taxes)   
+                    }
+                </p>
+            </div>
+            <div class="ekart-product-detail-size">
+                <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
+                    <h4>Available Size</h4>
+                </div>
+                <diV style="margin-top: 20px">
+                    @for (s of product.size; track product.size) {
+                        <span class="ekart-product-detail-available-size">{{s}}</span>
+                    }
+                </diV>                
+            </div>
+
+            <div class="ekart-product-detail-color">
+                <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
+                    <h4>Available Color</h4>
+                </div>
+                <diV style="margin-top: 20px;">
+                    @for(c of product.color; track $index){
+                        <span class="ekart-product-detail-available-color" [style.background-color]="c"></span>
+                    }
+                </diV>                
+            </div>
+
+            <div class="ekart-product-detail-desc">
+                <div style="padding: 5px 0px;border-bottom: #ccc 2px solid">
+                    <h4>Product Description</h4>
+                </div>
+                <div style="margin-top: 20px">
+                    <p>{{ product.description }}</p>
+                </div>                
+            </div>
+        </div>
+        <div class="ekart-product-detail-addtoCart">
+            @if (product.is_in_inventory){
+                <button class="btn-add-to-cart" appHover (click)="addToCart(product)">ADD TO CART</button>   
+            }
+            @else {
+                <button class="btn-add-to-cart" appHover>NOTIFY ME</button>
+            }
+        </div>
+    </div>
+    <div class="overlay"></div>

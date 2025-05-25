@@ -1,0 +1,12 @@
+<div class="ekart-menu">
+    @for (item of mainMenuItems; track item) {
+        <a [routerLink]="getLink(item)" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          {{ item }}
+        </a>
+    }
+    
+    <a class="cart-link" [routerLink]="'/cart'">
+      <i class="fa fa-shopping-cart"></i>
+      Cart ({{ NumItemsInCart }})
+    </a>
+</div>
